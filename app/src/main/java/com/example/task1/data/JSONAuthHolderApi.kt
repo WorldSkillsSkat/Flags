@@ -3,7 +3,7 @@ package com.example.task1.data
 import retrofit2.http.Body
 import retrofit2.http.POST
 
-interface JSONPlaceHolderApi {
+interface JSONAuthHolderApi {
     @POST("/auth/register")
     suspend fun addUser(@Body user: User): Result<String>
 
