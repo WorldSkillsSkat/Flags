@@ -1,13 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".authorization.register.RegisterFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.task1.authorization.register.RegisterViewModel" />
+        <variable
+            name="email"
+            type="String" />
+        <variable
+            name="password"
+            type="String" />
+        <variable
+            name="password2"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nickname_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Почта"
+            android:text="@={email}"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/img_email_reg"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_email_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Почта"
+            android:text="@={email}"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/img_email_reg"
+            app:layout_constraintTop_toBottomOf="@id/edit_nickname_reg"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_password_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@={password}"
+            android:hint="Пароль"
+            android:inputType="text|textPassword"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/img_password_reg"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email_reg" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_password2_reg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@={password2}"
+            android:hint="Пароль"
+            android:inputType="text|textPassword"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/img_password_reg"
+            app:layout_constraintTop_toBottomOf="@+id/edit_password_reg" />
+
+        <ImageView
+            android:id="@+id/img_nickname_reg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_name"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_nickname_reg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_nickname_reg"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/img_email_reg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_email"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_email_reg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_email_reg"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/img_password_reg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_password"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_password_reg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email_reg" />
+
+        <ImageView
+            android:id="@+id/img_password2_reg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_password"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_password2_reg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_password2_reg" />
+
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ic_soccer_ball"
+            app:layout_constraintBottom_toTopOf="@+id/edit_email_reg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:text="SoccerSkills"
+            android:textColor="#353535"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_logo"
+            app:layout_constraintStart_toStartOf="@+id/img_logo"
+            app:layout_constraintTop_toTopOf="@+id/img_logo" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up_now_reg"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:onClick="@{(view) -> viewModel.openRegisterFragment()}"
+            android:text="Зарегистрироваться"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:theme="@style/Widget.MaterialComponents.Button.TextButton"
+            app:layout_constraintBottom_toTopOf="@id/btn_sign_in_reg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_in_reg"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:text="Войти"
+            android:onClick="@{() -> viewModel.signIn(email, password)}"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/teal_200"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
