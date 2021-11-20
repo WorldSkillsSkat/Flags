@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.task1.authorization.AuthorizationViewModel" />
+            type="com.example.task1.authorization.login.AuthorizationViewModel" />
         <variable
             name="email"
             type="String" />
@@ -19,7 +19,7 @@
         style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="authorization.AuthorizationFragment">
+        tools:context=".authorization.login.AuthorizationFragment">
 
 
         <com.google.android.material.textfield.TextInputEditText

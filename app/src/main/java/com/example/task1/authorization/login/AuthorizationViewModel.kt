@@ -1,4 +1,4 @@
-package com.example.task1.authorization
+package com.example.task1.authorization.login
 
 import android.util.Log
 import androidx.lifecycle.LiveData
