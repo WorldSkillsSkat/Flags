@@ -1,4 +1,4 @@
-package com.example.task1.flags
+package com.example.task1.country
 
 import com.google.gson.annotations.Expose
 
@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 
 
-data class Flag (
+data class Country (
     @SerializedName("name")
     @Expose
     val name: Name = Name(),
@@ -20,12 +20,6 @@ data class Flag (
     @Expose
     val flags: MyImage
 
-)
-
-class Demonyms (
-    @SerializedName("flags")
-    @Expose
-    val flags: MyImage
 )
 
 data class MyImage(
