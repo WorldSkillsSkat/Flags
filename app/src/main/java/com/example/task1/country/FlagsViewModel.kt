@@ -9,9 +9,6 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
 class FlagsViewModel(private val networkService: NetworkService) : ViewModel() {
-    init {
-        getCountries()
-    }
 
     private var _countries = MutableLiveData<Array<Country>>()
     val countries: LiveData<Array<Country>>
@@ -21,7 +18,7 @@ class FlagsViewModel(private val networkService: NetworkService) : ViewModel() {
     val showToast: LiveData<String>
         get() = _showToast
 
-    private fun getCountries() {
+    fun getCountries() {
         viewModelScope.launch {
             try {
                 _countries.value = networkService.getCountries()

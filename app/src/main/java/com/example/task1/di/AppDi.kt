@@ -3,7 +3,7 @@ package com.example.task1.di
 import com.example.task1.authorization.login.LoginViewModel
 import com.example.task1.authorization.register.RegisterViewModel
 import com.example.task1.data.NetworkService
-import com.example.task1.flags.FlagsViewModel
+import com.example.task1.country.FlagsViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

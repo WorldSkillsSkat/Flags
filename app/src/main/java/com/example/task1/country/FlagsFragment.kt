@@ -27,11 +27,14 @@ class FlagsFragment : Fragment() {
     ): View? {
         initBinding(inflater, container)
         setupObserverViewModel()
-        return inflater.inflate(R.layout.countries_fragment, container, false)
+
+        viewModel.getCountries()
+
+        return binding.root
     }
 
     private fun initBinding(inflater: LayoutInflater, container: ViewGroup?) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.countries_fragment, container, false)
     }
 
     private fun setupObserverViewModel() {

@@ -1,10 +1,8 @@
 package com.example.task1.data
 
-import com.example.task1.flags.Flag
+import com.example.task1.country.Country
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
-import org.json.JSONArray
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -24,7 +22,7 @@ class NetworkService {
         .build()
         .create(JSONFlagsHolderApi::class.java)
 
-    suspend fun getCountries(): Array<Flag> = coroutineScope {
+    suspend fun getCountries(): Array<Country> = coroutineScope {
         return@coroutineScope async {
             apiFlags.getCountries()
         }.await()
