@@ -127,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="bottom|center_horizontal"
+            android:onClick="@{(view) -> viewModel.openRegisterFragment()}"
             android:text="Зарегистрироваться"
             android:textColor="@color/black"
             android:textStyle="bold"

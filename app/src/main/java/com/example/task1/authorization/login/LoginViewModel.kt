@@ -11,9 +11,13 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
 class LoginViewModel(private val networkService: NetworkService) : ViewModel() {
-    private var _openFlagsFragment = MutableLiveData<Boolean>()
+    private var _openFlagsFragment = MutableLiveData<Boolean>(false)
     val openFragsFragment: LiveData<Boolean>
         get() = _openFlagsFragment
+
+    private var _openRegisterFragment = MutableLiveData<Boolean>(false)
+    val openRegisterFragment: LiveData<Boolean>
+        get() = _openRegisterFragment
 
     private var _showToast = MutableLiveData<String>()
     val showToast: LiveData<String>
@@ -34,5 +38,9 @@ class LoginViewModel(private val networkService: NetworkService) : ViewModel() {
         } else {
             _showToast.value = "Ваша почта не валидна. Попробуйте еще раз"
         }
+    }
+
+    fun openRegisterFragment() {
+        _openRegisterFragment.value = true
     }
 }
