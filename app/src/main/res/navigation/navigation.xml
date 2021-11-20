@@ -8,5 +8,14 @@
     <fragment
         android:id="@+id/authorizationFragment"
         android:name="com.example.task1.authorization.login.AuthorizationFragment"
-        android:label="AuthorizationFragment" />
+        android:label="AuthorizationFragment" >
+        <action
+            android:id="@+id/action_authorizationFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.task1.authorization.register.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment" />
 </navigation>
