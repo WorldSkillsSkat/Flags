@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/flagsFragment"
-        android:name="com.example.task1.flags.FlagsFragment"
+        android:name="com.example.task1.country.FlagsFragment"
         android:label="flags_fragment"
-        tools:layout="@layout/flags_fragment" />
+        tools:layout="@layout/countries_fragment" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.task1.authorization.register.RegisterFragment"
