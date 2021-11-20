@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.task1.R
 import com.example.task1.authorization.login.LoginViewModel
 import com.example.task1.databinding.CountriesFragmentBinding
@@ -23,6 +26,7 @@ class FlagsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         initBinding(inflater, container)
+        setupObserverViewModel()
         return inflater.inflate(R.layout.countries_fragment, container, false)
     }
 
@@ -30,5 +34,24 @@ class FlagsFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
     }
 
+    private fun setupObserverViewModel() {
+        viewModel.countries.observe(viewLifecycleOwner, {
+            configureRecyclerView(it)
+        })
+
+        viewModel.showToast.observe(viewLifecycleOwner, {
+            showToast(it)
+        })
+    }
+
+    private fun showToast(msg: String) {
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun configureRecyclerView(countries: Array<Country>) {
+        val adapter = CountriesRecyclerViewAdapter(countries)
+        binding.countriesRecyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.countriesRecyclerView.adapter = adapter
+    }
 
 }

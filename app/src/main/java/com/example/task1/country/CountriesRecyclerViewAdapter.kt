@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.task1.databinding.CountriesItemBinding
 
-class CountriesRecyclerViewAdapter(private val countries: List<Country>) :
+class CountriesRecyclerViewAdapter(private val countries: Array<Country>) :
     RecyclerView.Adapter<CountriesRecyclerViewAdapter.ViewHolder>() {
 
 
