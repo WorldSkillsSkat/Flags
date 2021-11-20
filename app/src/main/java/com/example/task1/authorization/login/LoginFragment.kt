@@ -8,13 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.task1.R
-import com.example.task1.databinding.FragmentAutorizationBinding
+import com.example.task1.databinding.FragmentLoginBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentAutorizationBinding
+    private lateinit var binding: FragmentLoginBinding
     private val viewModel by viewModel<LoginViewModel>()
 
 
@@ -35,7 +36,6 @@ class LoginFragment : Fragment() {
 
     private fun setupObserverViewModel() {
         viewModel.openFragsFragment.observe(viewLifecycleOwner, Observer {
-
         })
 
         viewModel.showToast.observe(viewLifecycleOwner, Observer {
