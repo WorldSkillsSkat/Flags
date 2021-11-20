@@ -7,6 +7,12 @@
         <variable
             name="viewModel"
             type="com.example.task1.authorization.AuthorizationViewModel" />
+        <variable
+            name="email"
+            type="String" />
+        <variable
+            name="password"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,18 +23,19 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_nickname"
+            android:id="@+id/edit_email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:hint="Никнейм"
+            android:hint="Почта"
+            android:text="@={email}"
             android:inputType="text"
             android:minHeight="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/img_nickname"
+            app:layout_constraintStart_toEndOf="@+id/img_email"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.35" />
 
@@ -38,23 +45,24 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:text="@={password}"
             android:hint="Пароль"
             android:inputType="text|textPassword"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/img_password"
-            app:layout_constraintTop_toBottomOf="@+id/edit_nickname" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
 
         <ImageView
-            android:id="@+id/img_nickname"
+            android:id="@+id/img_email"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:src="@drawable/ic_name"
-            app:layout_constraintBottom_toBottomOf="@+id/edit_nickname"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_email"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/edit_nickname"
+            app:layout_constraintTop_toTopOf="@+id/edit_email"
             app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
@@ -65,7 +73,7 @@
             android:src="@drawable/ic_password"
             app:layout_constraintBottom_toBottomOf="@+id/edit_password"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_nickname" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/check_remember_me"
@@ -95,7 +103,7 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:src="@drawable/ic_soccer_ball"
-            app:layout_constraintBottom_toTopOf="@+id/edit_nickname"
+            app:layout_constraintBottom_toTopOf="@+id/edit_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.06"
             app:layout_constraintStart_toStartOf="parent"
@@ -120,7 +128,6 @@
             android:layout_height="wrap_content"
             android:gravity="bottom|center_horizontal"
             android:text="Зарегистрироваться"
-            android:onClick="@{() -> viewModel.signIn()}"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:theme="@style/Widget.MaterialComponents.Button.TextButton"
@@ -134,7 +141,7 @@
             android:layout_width="180dp"
             android:layout_height="48dp"
             android:text="Войти"
-            android:onClick="@{() -> viewModel.signIn()}"
+            android:onClick="@{() -> viewModel.signIn(email, password)}"
             android:textColor="#FFFFFF"
             app:backgroundTint="@color/teal_200"
             app:cornerRadius="8dp"
