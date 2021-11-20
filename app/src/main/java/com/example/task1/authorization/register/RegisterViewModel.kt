@@ -1,7 +1,8 @@
 package com.example.task1.authorization.register
 
 import androidx.lifecycle.ViewModel
+import com.example.task1.data.NetworkService
 
-class RegisterViewModel : ViewModel() {
+class RegisterViewModel(networkService: NetworkService) : ViewModel() {
 
 }
