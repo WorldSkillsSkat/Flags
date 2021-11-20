@@ -12,10 +12,10 @@ import com.example.task1.R
 import com.example.task1.databinding.FragmentAutorizationBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class AuthorizationFragment : Fragment() {
+class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentAutorizationBinding
-    private val viewModel by viewModel<AuthorizationViewModel>()
+    private val viewModel by viewModel<LoginViewModel>()
 
 
     override fun onCreateView(
@@ -28,7 +28,7 @@ class AuthorizationFragment : Fragment() {
     }
 
     private fun initBinding(inflater: LayoutInflater, container: ViewGroup?) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_autorization, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
     }

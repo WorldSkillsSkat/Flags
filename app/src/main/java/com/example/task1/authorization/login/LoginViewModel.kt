@@ -10,7 +10,7 @@ import com.example.task1.data.User
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
-class AuthorizationViewModel(private val networkService: NetworkService) : ViewModel() {
+class LoginViewModel(private val networkService: NetworkService) : ViewModel() {
     private var _openFlagsFragment = MutableLiveData<Boolean>()
     val openFragsFragment: LiveData<Boolean>
         get() = _openFlagsFragment

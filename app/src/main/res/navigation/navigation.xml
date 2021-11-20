@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authorizationFragment"
-        android:name="com.example.task1.authorization.login.AuthorizationFragment"
+        android:name="com.example.task1.authorization.login.LoginFragment"
         android:label="AuthorizationFragment" >
         <action
             android:id="@+id/action_authorizationFragment_to_registerFragment"
