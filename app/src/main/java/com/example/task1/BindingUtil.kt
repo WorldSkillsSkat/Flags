@@ -1,4 +1,4 @@
-package com.example.task1.authorization
+package com.example.task1
 
 import android.annotation.SuppressLint
 import android.widget.ImageView
