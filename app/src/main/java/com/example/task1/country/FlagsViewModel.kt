@@ -18,6 +18,10 @@ class FlagsViewModel(private val networkService: NetworkService) : ViewModel() {
     val showToast: LiveData<String>
         get() = _showToast
 
+    private var _openDiagrammsFragment = MutableLiveData<Boolean>(false)
+    val openDiagrammsFragment: LiveData<Boolean>
+        get() = _openDiagrammsFragment
+
     fun getCountries() {
         viewModelScope.launch {
             try {
@@ -26,6 +30,10 @@ class FlagsViewModel(private val networkService: NetworkService) : ViewModel() {
                 _showToast.value = "Ошибка сервера"
             }
         }
+    }
+
+    fun openDiagrammsFragment() {
+        _openDiagrammsFragment.value = true
     }
 
 }

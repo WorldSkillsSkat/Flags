@@ -23,6 +23,10 @@ class DiagramViewModel(private val networkService: NetworkService) : ViewModel()
     val changeRadioGroup: LiveData<Int>
         get() = _changeRadioGroup
 
+    private var _back = MutableLiveData<Boolean>()
+    val back: LiveData<Boolean>
+        get() = _back
+
     fun getCountries() {
         viewModelScope.launch {
             try {
@@ -35,6 +39,10 @@ class DiagramViewModel(private val networkService: NetworkService) : ViewModel()
 
     fun changeRadioGroup(mode: Int, bol: Boolean) {
         if (bol) { _changeRadioGroup.value = mode }
+    }
+
+    fun back() {
+        _back.value = true
     }
 
     fun getFiveCountriesByCurrentMode(countries: MutableList<Country>, mode: Int): MutableList<Country> {

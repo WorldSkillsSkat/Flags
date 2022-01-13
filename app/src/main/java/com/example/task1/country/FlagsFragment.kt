@@ -35,6 +35,7 @@ class FlagsFragment : Fragment() {
 
     private fun initBinding(inflater: LayoutInflater, container: ViewGroup?) {
         binding = DataBindingUtil.inflate(inflater, R.layout.countries_fragment, container, false)
+        binding.viewModel = viewModel
     }
 
     private fun setupObserverViewModel() {
@@ -44,6 +45,10 @@ class FlagsFragment : Fragment() {
 
         viewModel.showToast.observe(viewLifecycleOwner, {
             showToast(it)
+        })
+
+        viewModel.openDiagrammsFragment.observe(viewLifecycleOwner, {
+            if (it) findNavController().navigate(R.id.action_flagsFragment_to_diagramFragment)
         })
     }
 

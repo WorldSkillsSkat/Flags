@@ -22,7 +22,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/back_diagram">
+            app:layout_constraintTop_toBottomOf="@+id/back_btn">
 
             <RadioButton
                 android:id="@+id/radioButton_1"
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onCheckedChanged="@{(view, bol) -> viewModel.changeRadioGroup(2, bol)}"
-                android:text="Diagram 2"/>
+                android:text="Diagram 2" />
         </RadioGroup>
 
         <TextView
@@ -60,14 +60,15 @@
             android:layout_marginTop="8dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/back_diagram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#4FB653"
-            android:text="Back"
-            android:onClick="@{(view) -> viewModel.changeRadioGroup(1, true)}"
+            android:id="@+id/back_btn"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> viewModel.back()}"
+            android:text="Назад"
             android:textColor="#FFFFFF"
+            app:backgroundTint="@color/teal_200"
+            app:cornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
